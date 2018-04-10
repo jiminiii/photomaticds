@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>EABCDDDC-58C9-4F8B-A55E-D04A56E09344</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ic_pass_gray" stroke="#FFFFFF" stroke-width="2">
+            <g id="calender" transform="translate(5.000000, 1.000000)">
+                <rect id="Rectangle-3" stroke-linecap="round" stroke-linejoin="round" x="0" y="8" width="15" height="13"></rect>
+                <path d="M5,14 L10,14" id="Line" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M3,1 L3,3.5 C3,5.98528137 5.01471863,8 7.5,8 C9.98528137,8 12,5.98528137 12,3.5 L12,1 L3,1 Z" id="Combined-Shape" transform="translate(7.500000, 4.500000) rotate(-180.000000) translate(-7.500000, -4.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+		table {width:950px; text-align:center; margin-left: 40px;}
+		
+/*
+		.left{text-align:left;}
+		.right{text-align:right;}
+*/
+        .photo_image{width:180px; height:180px;}
+.head_box{
+/*     color: #ddaffe;*/
+    width:1026px;
+    height:80px;
+       font-family: NanumSquare;
+    font-size: 26px;
+    text-align:center;
+    margin-bottom: 100px;
+
+  
+}

@@ -1,0 +1,396 @@
+
+@font-face {
+  font-family: 'NanumSquare';
+  src: url('NanumSquareR.eot?#iefix') format('embedded-opentype'),  url('NanumSquareR.woff') format('woff'), url('NanumSquareR.ttf')  format('truetype'), url('NanumSquareR.svg#NanumSquareR') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+   
+
+#m-container{
+    width:1440px;
+
+/*    margin:0px auto;*/
+    
+}
+
+/*
+body{
+            display: flex;
+             margin:0px auto;
+            flex-direction:row;
+        }
+*/
+
+ .Menu-BG {
+     
+      width:414px;
+    height:1024px;
+    float:left;
+    text-align:center;
+    overflow:auto;
+    background-image: linear-gradient(160deg, #ffb295, #fb5e8f);
+    display: inline;
+        
+
+           
+        }
+#m-content{
+
+    
+      text-align:center;
+    overflow:auto;
+    font-family: NanumSquare;
+      font-size: 24px;
+      line-height: 1.5;
+     width:1026px;
+    height:1024px;
+}
+   
+       
+        
+        ._wh {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+/*            position:absolute;*/
+            margin-top: 77px;
+/*           margin-left: 107px;*/
+           
+        }
+        .PHOTOMATIC {
+/*
+            width: 183px;
+            height: 32px;
+*/
+            font-family:NanumSquare;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+/*            position:absolute;*/
+            margin-top: 4px;
+/*            margin-left: 107px;*/
+            
+        }
+        .big {
+  width: 342px;
+  height: 342px;
+  object-fit: contain;
+/*            position:absolute;*/
+            margin-top: 130px;
+/*            margin-left:342px;*/
+}
+/*
+        
+        .gradient {
+  width: 1026px;
+  height: 1024px;
+        
+  background-color: #ffffff;
+           background-color:azure;
+            margin-left:414px;
+            display:inline;
+}
+*/
+/*
+        .content{
+            display:flex;
+        }
+*/
+
+        
+        
+        .Rectangle-1 {
+  width: 414px;
+  height: 56px;
+  background-color: rgba(0, 0, 0, 0);
+            margin-top: 94px;
+/*            position:absolute;*/
+}
+                .Rectangle-2 {
+  width: 414px;
+  height: 56px;
+  background-color: rgba(0, 0, 0, 0);
+                    
+/*            margin-top: 484px;*/
+/*            position:absolute;*/
+}
+.t_emailpw{
+  width: 250px;
+  height: 30px;
+  font-family: NanumSquare;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  color: #ffffff;
+     
+    
+  background-color: rgba(0, 0, 0, 0);
+            margin-top: 16px;
+/*            margin-left: 80px;*/
+/*            position:absolute;*/
+            border-color: rgba(0, 0, 0, 0);
+}
+        
+        .Rectangle {
+  width: 336px;
+  height: 1px;
+  background-color: #ffffff;
+            
+        
+/*            margin-top: 485px;*/
+            margin-left: 34px;
+/*            position: absolute;*/
+}
+                .Rectangle2 {
+  width: 336px;
+  height: 1px;
+  background-color: #ffffff;
+                   
+        
+/*            margin-top: 539px;*/
+/*            margin-left: 40px;*/
+/*            position: absolute;*/
+}
+        .errpw {
+  width: 180px;
+  height: 16px;
+  font-family: NanumSquare;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  color: #ffffff;
+/*            margin-top: 558px;*/
+/*            margin-left: 165px;*/
+/*            position:absolute;*/
+}
+        
+        .Rectangle-3{
+  width: 336px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #ffffff;
+              overflow: auto;
+    float:left;
+            margin-top: 14px;///////////
+            margin-left: 39px;
+/*            position: absolute;*/
+}
+ .b_login{
+  width: 336px;
+  height: 50px;
+  border-radius: 2px;
+  background-color: #ffffff;
+      margin-top: 50px;
+/*      margin-left: 39px;*/
+/*      position: absolute;*/
+      font-family: NanumSquare;
+      font-size: 20px;
+      letter-spacing: 0.5px;
+      text-align: center;
+      color: #ff3a5e;
+      border-color: rgba(0, 0, 0, 0);
+
+}
+.extra-box{
+    margin-top:15px;
+}
+        
+        .findpw {
+  width: 82px;
+/*  height: 16px;*/
+  font-family: NanumSquare;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #ffffff;
+/*            margin-top: 100px;*/
+ display: inline;
+            
+/*            margin-left: 115px;*/
+/*            position:absolute;*/
+}
+        
+        .Line {
+  width: 0.1px;
+  height: 10px;
+  border: solid 1px #f0f0f0;
+             display: inline;
+              
+/*            margin-top: 14px;*/
+            margin-left: 15px;
+/*            position:absolute;*/
+}
+        
+        .join {
+/*  width: 82px;*/
+/*  height: 16px;*/
+  font-family: NanumSquare;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #ffffff;
+             display: inline;
+/*            margin-top: 14px;*/
+            margin-left: 15px;
+/*            position:absolute;*/
+        
+}
+        
+        .pm {
+/*  width: 550px;*/
+  height: 26px;
+  font-family: NanumSquare;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+/*            margin-top: 512px;*/
+/*            margin-left: 250px;*/
+/*            position:absolute;*/
+}
+        
+        .Group-1 {
+  width: 159px;
+  height: 141px;
+  object-fit: contain;
+/*              margin-top: 50px;*/
+/*            margin-left: 30px;*/
+/*            position:absolute;*/
+}
+        
+        .g1-1 {
+/*  width: 135px;*/
+/*  height: 22px;*/
+  font-family: NanumSquare;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+            font-weight: 1000;
+                margin-top: 20px;
+/*            margin-left: 207px;*/
+/*            position:absolute;*/
+}
+        .g1-2 {
+/*  width: 195px;*/
+/*  height: 48px;*/
+  font-family:NanumSquare;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #4a4a4a;
+              margin-top: 30px;
+/*            margin-left: 177px;*/
+/*            position:absolute;*/
+}
+        
+        .Group-2 {
+  width: 137px;
+  height: 144px;
+  object-fit: contain;
+/*            margin-top: 624px;*/
+/*            margin-left: 30px;*/
+/*            position:absolute;*/
+}
+        
+        
+        
+             
+/*
+        .g2-1 {
+  width: 135px;
+  height: 22px;
+  font-family: NanumSquare;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+            font-weight: 1000;
+                margin-top: 20px;
+
+}
+        .g2-2 {
+  width: 195px;
+  height: 48px;
+  font-family: NanumSquare;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #4a4a4a;
+              margin-top: 30px;
+
+}
+*/
+        .Group-3 {
+  width: 152px;
+  height: 143px;
+  object-fit: contain;
+
+            margin-left: 30px;
+
+}
+                     
+/*
+        .g3-1 {
+  width: 135px;
+  height: 22px;
+  font-family: NanumSquare;
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #4a4a4a;
+            font-weight: 1000;
+                margin-top: 20px;
+
+
+}
+        .g3-2 {
+  width: 195px;
+  height: 48px;
+  font-family: NanumSquare;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  text-align: center;
+  color: #4a4a4a;
+              margin-top: 30px;
+
+}
+*/
+        .ic_email_wh{
+            
+             
+            width: 24px;
+            height: 24px;
+            margin-top: 16px;
+/*            margin-left: 40px;*/
+/*            position:absolute;*/
+        }
+        .ic_pass_wh {
+  width: 24px;
+  height: 24px;
+             margin-top: 16px;
+/*            margin-left: 40px;*/
+/*            position:absolute;*/
+}
+
+#char-list-box{
+   margin-top: 90px;
+    overflow: auto;
+    display:flex;
+    text-align: center;
+}
+        
+.char-small-box{
+    width:230px;
+/*    height:450px;*/
+    overflow: auto;
+/*    display:inline;*/
+/*    display: flex;*/
+    margin-left: 80px;
+}
