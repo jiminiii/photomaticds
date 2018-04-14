@@ -1,7 +1,7 @@
 <?php
 
     require_once("../tools.php");
-
+require(API_AWS_SDK);
 
 $sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
 	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
@@ -26,6 +26,37 @@ $sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
         $dao->deleteFileInfo($num);
         unlink(UPLOAD_PATH.ALBUM_PATH."/user-album/$email/$group/$fname/$save_name");  
         $dao->updateFolderSize($group,$fname,$email,-1);
+//인물사진이라면 해당 인물사진에대한 컬렉션에있는 얼굴삭제
+        if($group=='human'){
+            
+            
+             $options = [
+                'region'            => 'ap-northeast-1',
+                'version'           => '2016-06-27',
+              ];
+        $rekognition = new Aws\Rekognition\RekognitionClient($options);
+            
+            
+            
+//            unlink(UPLOAD_PATH.ALBUM_PATH."/user-album/$email/facelist/$save_name");  
+            $cn = explode("@",$email); 
+            $collectionid=$cn[0].$cn[1];
+            $faceid=$dao->getFaceID($email,$save_name);
+            foreach ($faceid as $row){
+                $result = $rekognition->deleteFaces([
+                'CollectionId' => $collectionid,
+                'FaceIds' => [$row["faceID"],
+                ],
+            ]);
+        }
+       
+            
+            $dao->deleteFaceInfo($fname,$email,$save_name);
+    }
+
+
+
+
         
 
          header("Location: photo.php?&fname=$fname"."&cate=$group");

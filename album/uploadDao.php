@@ -261,8 +261,66 @@ class uploadDao{
     }
 	
 	
+    
+    //컬렉션부분 추가함수들
+       public function addFaceInfo($faceID,$fname,$email,$pname,$psize,$ptime){
+
+     try{
+       $sql="insert into facelist(faceID,fname,email,pname,psize,ptime)values  (:faceID,:fname,:email,:pname,:psize,:ptime)";
+       $query=$this->db->prepare($sql);
+
+              $query->bindValue(":faceID",$faceID,PDO::PARAM_STR);
+            $query->bindValue(":fname",$fname,PDO::PARAM_STR);
+            $query->bindValue(":email",$email,PDO::PARAM_STR);
+              $query->bindValue(":pname",$pname,PDO::PARAM_STR);
+              $query->bindValue(":psize",$psize,PDO::PARAM_INT);
+              $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
+
+  //
+  //			$query->bindValue(":fname",$fname,PDO::PARAM_STR);
+  //			$query->bindValue(":ftime",$ftime,PDO::PARAM_STR);
+  //			$query->bindValue(":fsize",$fsize,PDO::PARAM_INT);
+
+       $query->execute();
+
+     }catch(PDOException $e){
+       exit($e->getMessage());
+     }
+   }
+    
+    public function deleteFaceInfo($fname,$email,$pname){
+         try{
+			
+			$query = $this->db->prepare("delete from facelist where email='$email' and pname='$pname' and fname='$fname'");
+			
+			//$query->bindValue("':num'",$num,PDO::PARAM_INT);
+			$query->execute();
+            
+//            $query = $this->db->prepare("delete from photo where email='$email' and fname='$fname' and cate='$cate'");
+//            $query->execute();
+		}catch(PDOException $e){
+			exit($e->getMessage());
+			
+		}
+		
+    }
+    public function getFaceID($email,$pname){
+    
+        
+		try{
+			$query= $this->db->prepare("select * from facelist where email='$email' and pname='$pname'");
+			$query->execute();
+			
+			$result=$query->fetchAll(PDO::FETCH_ASSOC);
+		}catch(PDOException $e){
+			exit($e->getMessage());
+		}
+		
+		return $result;
+    }
 	
 }
+
 
 
 ?>
