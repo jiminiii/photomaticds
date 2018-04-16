@@ -9,6 +9,7 @@
     session_none();
 	$email=sessionVar("uid");
 	$name=sessionVar("uname");
+  
 
 ?>
    
@@ -26,7 +27,8 @@
         
         
           <a href="<?=MEMBER_PATH ?>/logout.php" style="color: #ffffff;
-         text-decoration:none;" class="member_info" >로그아웃</a>&nbsp;&nbsp;<div style="font-size:13px;display:inline;">|</div>&nbsp;
+         text-decoration:none;" class="member_info" >로그아웃</a>&nbsp;&nbsp;
+         <div style="font-size:13px;display:inline;">|</div>&nbsp;
          <a href="<?=MEMBER_PATH ?>/pw_change_form.php" style="color: #ffffff;
          text-decoration:none;" class="member_info" >비밀번호 변경</a>
         
@@ -41,7 +43,8 @@
           <div class=sub_menu>
           
              <a href="<?=ALBUM_PATH?>/folder_main.php?cate=human" style="color: #ffffff;
-     text-decoration:none;" >인물</a><br><br>
+     text-decoration:none;" >인물</a>
+            <br><br>
              <a href="<?=ALBUM_PATH?>/folder_main.php?cate=animal" style="color: #ffffff;
          text-decoration:none;" >동물</a><br><br>
              <a href="<?=ALBUM_PATH?>/folder_main.php?cate=landscape" style="color: #ffffff;

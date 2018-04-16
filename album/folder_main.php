@@ -34,6 +34,13 @@
                 <div class="head_box">
                     <?=$cate?>
                     <img src="<?= IMG_PATH ?>/set.png" style="width:25px; height:25px;" onclick= "location.href='folder_edit.php?cate=<?=$cate?>'">
+                    <?php 
+                        if($cate=='human'){?>
+                            <img src="<?= IMG_PATH ?>/search.png" style="width:25px; height:25px;" onclick= "location.href='search_face.php'">
+                        <?php 
+                        }
+                    
+                    ?>
                      <hr width="100px" color=#ff3a5e>
                 </div>
                 

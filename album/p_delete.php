@@ -41,7 +41,7 @@ $sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
 //            unlink(UPLOAD_PATH.ALBUM_PATH."/user-album/$email/facelist/$save_name");  
             $cn = explode("@",$email); 
             $collectionid=$cn[0].$cn[1];
-            $faceid=$dao->getFaceID($email,$save_name);
+            $faceid=$dao->getFaceID($email,$fname,$save_name);
             foreach ($faceid as $row){
                 $result = $rekognition->deleteFaces([
                 'CollectionId' => $collectionid,

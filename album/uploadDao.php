@@ -304,11 +304,11 @@ class uploadDao{
 		}
 		
     }
-    public function getFaceID($email,$pname){
+    public function getFaceID($email,$fname,$pname){
     
         
 		try{
-			$query= $this->db->prepare("select * from facelist where email='$email' and pname='$pname'");
+			$query= $this->db->prepare("select * from facelist where email='$email' and pname='$pname' and fname='$fname'");
 			$query->execute();
 			
 			$result=$query->fetchAll(PDO::FETCH_ASSOC);
@@ -318,6 +318,90 @@ class uploadDao{
 		
 		return $result;
     }
+    
+    public function getFaceFileInfo($email,$faceID){
+
+
+        try{
+        $query= $this->db->prepare("select * from facelist where email='$email' and faceID=
+        '$faceID'");
+        $query->execute();
+
+        // $result=$query->fetchAll(PDO::FETCH_ASSOC);
+        $result=$query->fetch();
+        }catch(PDOException $e){
+        exit($e->getMessage());
+        }
+
+        return $result;
+    }
+        public function getFacelist($email,$fname){
+
+
+        try{
+        $query= $this->db->prepare("select * from facelist where email='$email' and fname='$fname'");
+        $query->execute();
+
+        // $result=$query->fetchAll(PDO::FETCH_ASSOC);
+        $result=$query->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+        exit($e->getMessage());
+        }
+
+        return $result;
+    }
+    
+    	 public function addResultFaceInfo($faceID,$fname,$email,$pname,$psize,$ptime){
+
+     try{
+       $sql="insert into resultface(faceID,fname,email,pname,psize,ptime)values  (:faceID,:fname,:email,:pname,:psize,:ptime)";
+       $query=$this->db->prepare($sql);
+
+              $query->bindValue(":faceID",$faceID,PDO::PARAM_STR);
+                $query->bindValue(":fname",$fname,PDO::PARAM_STR);
+                $query->bindValue(":email",$email,PDO::PARAM_STR);
+              $query->bindValue(":pname",$pname,PDO::PARAM_STR);
+              $query->bindValue(":psize",$psize,PDO::PARAM_INT);
+              $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
+
+       $query->execute();
+
+     }catch(PDOException $e){
+       exit($e->getMessage());
+     }
+   }
+    
+    		public function deleteResultFace(){
+
+			try{
+
+				$query = $this->db->prepare("delete from resultface where num>=0");
+
+				$query->execute();
+			}catch(PDOException $e){
+				exit($e->getMessage());
+
+			}
+
+		//	return $result;
+
+
+		}
+    public function getResultFileList($email){
+
+
+        try{
+        $query= $this->db->prepare("select * from resultface where email='$email'");
+        $query->execute();
+
+        $result=$query->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+        exit($e->getMessage());
+        }
+
+        return $result;
+    }
+
 	
 }
 
