@@ -2,7 +2,9 @@
 
     require_once("../tools.php");
 	require_once("uploadDao.php");
+    require_once("tagDao.php");
 	$dao=new uploadDao();
+    $tdao=new tagDao();
 	
 	$sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
 	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
@@ -42,7 +44,27 @@
 
                
                       <div class="left">
-                       <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br><br><br><img src="<?= IMG_PATH ?>/delete.png" onclick="photoDelete()"></div>
+                       <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br>
+                       
+                       <?php 
+                           
+                           $tagList=$tdao->getPhotoTagIdxList($num);
+                    if($tagList!=null){
+                         foreach($tagList as $t){
+                        $s=$tdao->getTagString("$t[hash_index]")
+                            ?><?="#".$s[0]  ?><?php
+                    }
+                    }
+                   
+                    
+                           
+                           
+                           ?>
+                       
+                       
+                       <br><br><img src="<?= IMG_PATH ?>/delete.png" onclick="photoDelete()">  
+                       <img src="<?= IMG_PATH ?>/hash.png" class="b_photo_in" onclick="location.href='big_photo_hash.php?pname=<?=$pname?>&fname=<?=$fname?>&cate=<?=$cate?>&num=<?=$num?>'">
+                       </div>
               
                 </div> 
                 
