@@ -55,22 +55,7 @@
                           class="photo_image" onclick="location.href='<?= ALBUM_PATH ?>/big_photo.php?pname=<?=$row["pname"]?>&fname=<?= $row["fname"] ?>&cate=<?=$cate?>&num=<?=$row["num"]?>'"></td>
                     <?php $count++; endforeach ?>
                     </tr>
-                </table>
-                
-            
-<!--
-                인물을 테마로한 폴더들이 들어갈예정
-                <br>ex : (셀카, 친구들);
-                <div class="folder_box">
-                    <div class="folder">
-                          <img src="<?= IMG_PATH ?>/sample1.PNG"
-                          class="folder_image"><br>
-                          셀카
-                    </div>
-                </div>
--->
-            
-                
+                </table> 
             </div>
         </div>
     </body>

@@ -34,7 +34,7 @@
         
     </div>
        <div class=menu_box style="background-color: rgba(0, 0, 0, 0.08);">
-          <div id=album_top>
+          <div class=album_top>
                <a href="<?=MAIN_PAGE?>" style="color: #ffffff;
      text-decoration:none;" >앨범보기</a>
           </div>
@@ -66,9 +66,16 @@
        </div>
 -->
              <div class=menu_box>
-          <div id=album_top>
+          <div class=album_top>
                <a href="<?=HOME_PATH?>/upload.php" style="color: #ffffff;
      text-decoration:none;" >사진 분류하기</a>
+          </div>
+          
+       </div>
+                    <div class=menu_box>
+          <div class=album_top>
+               <a href="<?= SEARCH_PATH ?>/search_tag_form.php" style="color: #ffffff;
+     text-decoration:none;" >태그 검색</a>
           </div>
           
        </div>

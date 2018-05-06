@@ -9,6 +9,7 @@
     define("UPLOAD_PATH","/xampp/htdocs");
     define("API_AWS_SDK","/xampp/php/vendor/autoload.php");
     define("TEMP_PATH","/pm_site/album/temp_photo");
+    define("SEARCH_PATH","/pm_site/search");
 
 
 	//게시판 모듈의 URL을 반환하는 함수
@@ -32,7 +33,24 @@
 	}
     function session_none(){
         if(sessionVar("uid")==null){
-            errorBack("로그인을 해주십시오");
+          		
+?>		
+
+	<!doctype html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<script>
+		alert('로그인을 해주십시오');
+		location="<?=HOME_PATH?>";
+	</script>
+	</body>
+	</html>
+<?php 
+
+		exit();
         }
             
     }

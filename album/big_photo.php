@@ -52,7 +52,11 @@
                     if($tagList!=null){
                          foreach($tagList as $t){
                         $s=$tdao->getTagString("$t[hash_index]")
-                            ?><?="#".$s[0]  ?><?php
+                            ?>
+                            
+                           <a href="<?=SEARCH_PATH?>/search_t.php?tagString=<?=$s[0]?>" style="text-decoration:none;color:gray;"><?="#".$s[0]  ?></a>&nbsp; 
+                            
+                            <?php
                     }
                     }
                    

@@ -55,12 +55,12 @@
                         
                        추가 할 태그를 입력하세요
                        <form action="hash.php?pname=<?=$pname?>&fname=<?=$fname?>&cate=<?=$cate?>&num=<?=$num?>" method="post">
-                           <input type="text" name="tagString" class="f_plus_t" style="width: 250px;font-size:20px;height:30px;color:gray;">
+                           <input type="text" name="tagString" class="f_plus_t" style="width: 250px;font-size:20px;height:30px;color:gray;" placeholder="#태그#태그..." >
                            <input type="submit" value="추가" class="f_plus_b">
                        </form>
                         <button onclick="back()" class="f_plus_b">취소</button>
                        </div>
-              
+                       
                 </div> 
                 
 
