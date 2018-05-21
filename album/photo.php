@@ -1,5 +1,4 @@
 <?php 
-
     require_once("../tools.php");
 	require_once("uploadDao.php");
 	$dao=new uploadDao();
@@ -14,7 +13,6 @@
     $cate=requestValue("cate");
 	$result = $dao->getFileList($sort,$dir,$email,$fname,$cate);
     
-
 ?>
 
 

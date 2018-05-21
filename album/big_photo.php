@@ -1,8 +1,7 @@
 <?php 
-
     require_once("../tools.php");
 	require_once("uploadDao.php");
-    require_once("tagDao.php");
+    require_once("../search/tagDao.php");
 	$dao=new uploadDao();
     $tdao=new tagDao();
 	
@@ -17,8 +16,10 @@
     $num=requestValue("num");
     $pname=requestValue("pname");
 	$result = $dao->getFileList($sort, $dir,$email,$fname,$cate);
-    
-
+     if($num==null){
+        $fileNum=$dao->getFileNum($pname);
+        $num=$fileNum[0];
+    }
 ?>
 
 

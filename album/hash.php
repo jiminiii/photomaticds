@@ -9,7 +9,7 @@
     <?php 
 
     require_once("../tools.php");
-	require_once("tagDao.php");
+	require_once("../search/tagDao.php");
 	$dao=new tagDao();
 	
 
@@ -28,7 +28,7 @@
 
 
 $count=0;
-?>
+?>,
 <?php foreach ($tag as $t) : 
 
 $t=trim($t);
@@ -41,7 +41,7 @@ if($count!=0){
     }
    $exist2=$dao->getPhotoTag($num,$exist[0]);
     if($exist2[0]==null){
-        $dao->addPhototagInfo($num,$exist[0]);
+        $dao->addPhototagInfo($num,$exist[0],$email);
     }
     
 }

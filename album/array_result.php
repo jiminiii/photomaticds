@@ -1,9 +1,7 @@
 <?php
-
     require_once("../tools.php");
     require_once("uploadDao.php");
 	$dao=new uploadDao();
-
 	$errMsg="업로드 실패!2";
     session_start_if_none();
 	$email=sessionVar("uid");
@@ -29,14 +27,12 @@
     <link rel="stylesheet" type="text/css" href="../main.css">
     
     <style>
-
         .left_folder{
             text-align: center;
             width:150px;
             font-size: 3px;
         }
         #what{
-
     background-color:#feeeee;
     width:auto;
     height:140px;
@@ -66,7 +62,6 @@
             text-align: center;
             font-size: 15px;
         }
-
         </style>
     </head>
     <body>

@@ -24,9 +24,12 @@
        <meta charset="utf-8">
         <title>Welcome, PhotoMatic ! </title>
     <link rel="stylesheet" type="text/css" href="../main.css">
+
+
     </head>
     <body>
         <div id="m-container">        
+       
           <?php require("../sidebar.php");?>
             
            
@@ -34,17 +37,18 @@
                 <div class="head_box">
                    <?=$fname?>
                      <hr width="100px" color=#ff3a5e><br>
-                          <form action="add_file.php?sort=<?= $sort ?>&dir=<?= $dir ?>&fname=<?=$fname?>&cate=<?=$cate?>" enctype="multipart/form-data" method="post">
+                          <form action="add_file.php?sort=<?= $sort ?>&dir=<?= $dir ?>&fname=<?=$fname?>&cate=<?=$cate?>" enctype="multipart/form-data" method="post" onsubmit="return loading(this);">
 <!--                <input type="file" name="upload"><br>-->
                 <input type="file" id="file1" name="upload[]" multiple>
                 <input type="submit" value="업로드">
+
 
                 </form>
                 </div>
                 
                 
            
-                
+                 <img src="/pm_site/img/blank.jpg" id="loading">
 
                 <table>
                 <?php $count=1; ?>
@@ -60,21 +64,19 @@
                     </tr>
                 </table>
                 
-            
-<!--
-                인물을 테마로한 폴더들이 들어갈예정
-                <br>ex : (셀카, 친구들);
-                <div class="folder_box">
-                    <div class="folder">
-                          <img src="<?= IMG_PATH ?>/sample1.PNG"
-                          class="folder_image"><br>
-                          셀카
-                    </div>
-                </div>
--->
-            
+      
                 
             </div>
         </div>
+        
+         <script type="text/javascript">
+            function loading(f){
+                
+              
+                document.querySelector("#loading").setAttribute('src',"/pm_site/img/bigload.gif");
+              return true;
+            }
+          
+        </script>
     </body>
 </html>

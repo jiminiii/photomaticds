@@ -1,5 +1,4 @@
 <?php 
-
     require_once("../tools.php");
 	require_once("uploadDao.php");
 	$dao=new uploadDao();
@@ -51,7 +50,7 @@
                         ?></tr><tr><?php
                     }
                     ?>
-                       <td class="left"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/human/<?=$row["fname"]?>/<?=$row["pname"]?>" class="photo_image"></td>
+                       <td class="left"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/human/<?=$row["fname"]?>/<?=$row["pname"]?>" class="photo_image" onclick="location.href='<?= ALBUM_PATH ?>/big_photo.php?pname=<?=$row["pname"]?>&fname=<?= $row["fname"] ?>&cate=human'"></td>
                     <?php $count++; endforeach ?>
                     </tr>
                 </table>

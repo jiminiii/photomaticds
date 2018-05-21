@@ -14,7 +14,7 @@
     if($tag!=null){
          $tag_idx=$dao->getTag($tag);
         if($tag_idx[0]!=null){
-            $photo_idx=$dao->getPhotoIdx($tag_idx[0]);
+            $photo_idx=$dao->getPhotoIdx($tag_idx[0],$email);
 
             if($photo_idx!=null){
                 $search=true;

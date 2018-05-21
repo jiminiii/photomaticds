@@ -6,40 +6,29 @@
     $count=0;
  
     $myLabel=isset($_REQUEST['categroup']) ? $_REQUEST['categroup'] : "null";
-
     if($myLabel=="null"){
          errorBack("분류 기준을 선택해주세요");
     }else{
         
-
         
         
         
         if ($_FILES["upload"]["error"][0]==UPLOAD_ERR_OK){
                      
             require API_AWS_SDK;
-
     //        use Aws\Rekognition\RekognitionClient;
-
             $options = [
                 'region'            => 'ap-northeast-1',
                 'version'           => '2016-06-27',
             ];
-
             $rekognition = new Aws\Rekognition\RekognitionClient($options);
-
             require("uploadDao.php");
             $dao=new uploadDao();
                      $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/";
-
                 $handle=opendir($directory); 
-
                 while($file=readdir($handle)){
-
                     unlink($directory.$file);
-
                 }
-
                 closedir($handle);
         $dao->deleteTempFileInfo($email);
             
@@ -68,13 +57,10 @@
                 }    
                 
                 if($_FILES["upload"]["error"][$i]==UPLOAD_ERR_OK){
-
                                     #Get local image
                 $fp_image = fopen($_FILES['upload']['tmp_name'][$i], 'r');
                 $image = fread($fp_image, filesize($_FILES['upload']['tmp_name'][$i]));
                 fclose($fp_image);
-
-
                 # Call DetectFaces
                 $result = $rekognition->detectLabels(array(
                    'Image' => array(
@@ -83,13 +69,10 @@
                    'Attributes' => array('ALL')
                    )
                 );
-
-
                 # Display info for each detected person
                 print '포토매틱 detectLabels' . PHP_EOL;
                     
                 for ($n=0;$n<sizeof($result['Labels']); $n++){
-
 //                  print 'Confidence: '.$result['Labels'][$n]['Confidence']
 //                  .  PHP_EOL
 //                  . 'Name: ' . $result['Labels'][$n]['Name']
@@ -109,7 +92,6 @@
                 }
 //                echo $myLabel;
 //                echo $findLabel;
-
                 if(!$findLabel){
                     
                     //errorBack("분류 기준에 맞는 사진이 존재하지 않습니다");
@@ -137,14 +119,9 @@
                         break;
                             
                 }
-
                     if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$save_name")){
                         $dao->addTempFileInfo($cate,$email,$save_name,$psize,date("Y-m-d H:i:s"));
-
                     }
-
-
-
                 }
                     
                     
@@ -158,14 +135,10 @@
             
              header("Location: array_result.php?"."&cate=$cate"."&pname=$save_name"."&psize=$psize");
                     exit();
-
     }//error0
-
         
          
 }//null
-
-
     
 ?>
 <!doctype html>

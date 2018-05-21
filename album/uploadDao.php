@@ -275,7 +275,6 @@ class uploadDao{
               $query->bindValue(":pname",$pname,PDO::PARAM_STR);
               $query->bindValue(":psize",$psize,PDO::PARAM_INT);
               $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
-
   //
   //			$query->bindValue(":fname",$fname,PDO::PARAM_STR);
   //			$query->bindValue(":ftime",$ftime,PDO::PARAM_STR);
@@ -350,6 +349,20 @@ class uploadDao{
 
         return $result;
     }
+    
+    	public function getFileNum($pname){
+		
+		
+		try{
+			$query= $this->db->prepare("select num from photo where pname='$pname'");
+			$query->execute();	
+			$result=$query->fetch();
+		}catch(PDOException $e){
+			exit($e->getMessage());
+		}
+		
+		return $result;
+	}
     
     	 public function addResultFaceInfo($faceID,$fname,$email,$pname,$psize,$ptime){
 

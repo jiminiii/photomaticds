@@ -49,6 +49,7 @@ class tagDao{
 		
 		return $result;
 	}
+    //해당 사진의 해당 해쉬태그가있는지 알아보기위해.. 사진번호가 모두 달라서 굳이 이메일은 필요없음
     	public function getPhotoTag($num,$idx){
 		
 		
@@ -77,11 +78,11 @@ class tagDao{
 		return $result;
 	}
     
-            public function getPhotoIdx($idx){
+            public function getPhotoIdx($idx,$email){
 		
 		
 		try{
-			$query= $this->db->prepare("select * from photo_hash where hash_index='$idx'");
+			$query= $this->db->prepare("select * from photo_hash where hash_index='$idx' and email='$email'");
 			$query->execute();	
 			$result=$query->fetchAll(PDO::FETCH_ASSOC);
 		}catch(PDOException $e){
@@ -122,15 +123,16 @@ class tagDao{
 		}
 	}
     
-    	public function  addPhototagInfo($pidx,$tidx){
+    	public function  addPhototagInfo($pidx,$tidx,$email){
 		
 		
 		try{
-			$sql="insert into photo_hash(photo_index,hash_index)values (:pidx,:tidx)";
+			$sql="insert into photo_hash(photo_index,hash_index,email)values (:pidx,:tidx,:email)";
 			$query=$this->db->prepare($sql);
             
             $query->bindValue(":pidx",$pidx,PDO::PARAM_INT);
             $query->bindValue(":tidx",$tidx,PDO::PARAM_INT);
+            $query->bindValue(":email",$email,PDO::PARAM_STR);
 			$query->execute();
 			
 		}catch(PDOException $e){

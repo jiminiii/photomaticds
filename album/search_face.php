@@ -35,15 +35,25 @@
                      <br>
                      포토매틱의 앨범에서 찾고싶은 얼굴을 선택해주세요!
                 </div>
-                <form action="search.php" enctype="multipart/form-data" method="post">
+                <form action="search.php" enctype="multipart/form-data" method="post" onsubmit="return loading(this);">
                <input type="file" name="upload">
                 <input type="submit" value="업로드">
                 </form>
+                <br><br>
+                <img src="/pm_site/img/blank.jpg" id="loading">
             
                 
             </div>
         </div>
-        
+          <script type="text/javascript">
+            function loading(f){
+                
+              
+                document.querySelector("#loading").setAttribute('src',"/pm_site/img/bigload.gif");
+              return true;
+            }
+          
+        </script>
 
     </body>
 </html>

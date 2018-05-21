@@ -11,10 +11,6 @@
 	$name=sessionVar("uname");
     $fname=requestValue("fname");
     $cate=requestValue("cate");
-//    $pname=requestValue("pname");
-    $psize=requestValue("psize");
-    $save_name=$pname;//iconv("utf-8","cp949",$pname);
-		
 	$result = $dao->getTempFileList($email,$cate);
         
 //        
@@ -98,13 +94,10 @@
 	<meta charset="utf-8">
 </head>
 <body>
-<!--
 
 <script>
 	alert('<?=$errMsg ?>');
 	history.back();
 </script>
--->
-
 </body>
 </html>

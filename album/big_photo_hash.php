@@ -15,7 +15,7 @@
     $num=requestValue("num");
     $pname=requestValue("pname");
 	$result = $dao->getFileList($sort, $dir,$email,$fname,$cate);
-    
+   
 
 ?>
 

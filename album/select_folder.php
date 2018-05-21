@@ -1,6 +1,4 @@
-
 <?php 
-
 $f_list=$dao->getFolderList($email,$cate);
 $ver="two";
 ?>
