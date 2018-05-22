@@ -45,9 +45,9 @@ $ver="two";
                 var f=name;
                 var ret = confirm(f+"폴더에 저장하시겠습니까?");
                 if(ret == true){
-                    location.href="save_photo.php?fname="+f+"&cate=<?=$cate?>&pname=<?=$pname?>";
+                    location.href="save_photo.php?fname="+f+"&cate=<?=$cate?>";
                     
-                    "location.href='<?= ALBUM_PATH ?>/photo.php?fname=<?= $row["fname"] ?>&cate=<?=$cate?>&psize=<?=$psize?>'"
+                    
                 }
                 
             }

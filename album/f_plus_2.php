@@ -53,7 +53,7 @@ $ver="two";
                             }else if($cate=='art'){
                                 ?>/f_art_1.png<?php
                             }
-                          ?>" class="select_folder" onclick="location.href='<?= ALBUM_PATH ?>/photo.php?fname=<?= $row["fname"] ?>&cate=<?=$cate?>'"><br>
+                          ?>" class="select_folder" onclick="back()"><br>
                           <div class="textalign" ><?=$row["fname"]?> (<?= $row["fsize"]?>)</div></td>
                                           
                     <?php endforeach ?>
@@ -62,20 +62,24 @@ $ver="two";
     </div>
 </div>
 <script>
-    function folderPlus(){
-        var plusName=prompt("추가할 폴더명을 입력하세요","");
-        
-        if(plusName){
-            $.ajax({
-                type:"POST",URL:"add_plusfolder.php".data:{fname:}
-            })
+//    function folderPlus(){
+//        var plusName=prompt("추가할 폴더명을 입력하세요","");
+//        
+//        if(plusName){
+//            $.ajax({
+//                type:"POST",URL:"add_plusfolder.php".data:{fname:}
+//            })
+//    
+//        }else if(plusName==""){
+//            alert("폴더명을 입력하세요.")
+//            folderPlus();
+//        }
+//        
+//    }
+//    
     
-//            window.location.reload(); 
-        }else if(plusName==""){
-            alert("폴더명을 입력하세요.")
-            folderPlus();
-        }
-        
+    function back(){
+        alert('폴더추가를 취소합니다');
+        history.back();
     }
-    
 </script>

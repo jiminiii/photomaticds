@@ -33,7 +33,9 @@
             font-size: 3px;
         }
         #what{
-    background-color:#feeeee;
+/*    background-color:#feeeee;*/
+            background-color:rgba(255,250,250,1);
+    margin-left:70px;
     width:auto;
     height:140px;
     border-top-style:dotted;

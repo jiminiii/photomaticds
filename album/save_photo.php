@@ -3,9 +3,9 @@
     require_once("../tools.php");
     require("uploadDao.php");
     $dao=new uploadDao();
-	$sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
-	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
-	$errMsg="업로드 실패!";
+//	$sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
+//	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
+	$errMsg="저장 실패!";
     session_start_if_none();
 	$email=sessionVar("uid");
 	$name=sessionVar("uname");
