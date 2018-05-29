@@ -5,9 +5,9 @@ class Sendmail {
     /* smtp 의 호스트 설정 : 아래는 gmail 일경우 */
     var $host="ssl://smtp.gmail.com";
 	/* smtp 계정 아이디 입력 */
-    var $smtp_id="jeongjimin962@gmail.com";
+    var $smtp_id="";
     /* smtp 계정 비밀번호 입력 */
-	var $smtp_pw="pm20181055";
+	var $smtp_pw="";
 
     /* 디버그모드 - 활성 :1, 비활성 : 0; */
     var $debug = 1;
