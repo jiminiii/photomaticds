@@ -106,15 +106,19 @@ for($i=0;$i<20;$i++){
                    )
                 );
 
-
-//                for ($n=0;$n<sizeof($resultLabel['Labels']); $n++){
+                $tcount=0;
+                for ($n=0;$n<sizeof($resultLabel['Labels']); $n++){
         
-        for ($n=0;$n<6; $n++){
-                    //태그 자동생성 6개로 제한
+                    $tcount++;
+                    if($tcount>6){
+                        break;
+                    }
+                    //태그 자동생성 최대 6개로 제한
                     ///파파고로 번역//
                     
             
-
+$client_id = "5DDQndZcOVYcps0dHZUj";
+$client_secret = "cDQlxG0SJY";
 
 //이부분은 보안상 숨김 실행시 값 입력 필요***********************************************************
 //$client_id = "";

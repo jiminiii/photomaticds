@@ -39,30 +39,17 @@
                 <div class="Rectangle"></div>
        
                <?php if($id):?>
-<!--
-                <div class="errpw">
-                    비밀번호가 일치하지 않습니다.
-                </div>
--->
+
                 <?php endif ?>
         
                 <input type="submit" value="Login" class="b_login">
-        <!--
 
-                <div class="findpw">
-                    비밀번호 찾기
-                </div>
-        -->
        
                </form>
              <div class="extra-box">  
                
-        <a href="pw.html" class="findpw" style="text-decoration:none;">비밀번호 찾기</a><div class="Line"></div>
-<!--
-        <div class="join">
-            회원가입 하기
-        </div>
--->
+        <a href="<?=MEMBER_PATH?>/findepw_form.php" class="findpw" style="text-decoration:none;">비밀번호 찾기</a><div class="Line"></div>
+
         <a href="<?=MEMBER_PATH?>/member_join_form.php" class="join" style="text-decoration:none;" >회원가입 하기</a>
         </div>
         </div>
