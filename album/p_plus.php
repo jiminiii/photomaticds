@@ -40,7 +40,7 @@
                           <form action="add_file.php?sort=<?= $sort ?>&dir=<?= $dir ?>&fname=<?=$fname?>&cate=<?=$cate?>" enctype="multipart/form-data" method="post" onsubmit="return loading(this);">
 <!--                <input type="file" name="upload"><br>-->
                 <input type="file" id="file1" name="upload[]" multiple>
-                <input type="submit" value="업로드">
+                <input type="submit" value="업로드"><br><div style="color:gray;font-size:20px;">(최대 8장)</div>
 
 
                 </form>

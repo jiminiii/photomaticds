@@ -40,21 +40,14 @@
           </div>
           
        </div>
-          <div class=sub_menu>
+          <div class=sub_menu style="color: #ffffff; font-size:15px;">
           
-             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=human" style="color: #ffffff;
-     text-decoration:none;" >인물</a>
-            <br><br>
-             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=animal" style="color: #ffffff;
-         text-decoration:none;" >동물</a><br><br>
-             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=landscape" style="color: #ffffff;
-         text-decoration:none;" >풍경</a><br><br>
-             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=text" style="color: #ffffff;
-         text-decoration:none;" >글자</a><br><br>
-         <a href="<?=ALBUM_PATH?>/folder_main.php?cate=food" style="color: #ffffff;
-         text-decoration:none;" >음식</a><br><br>
-         <a href="<?=ALBUM_PATH?>/folder_main.php?cate=art" style="color: #ffffff;
-         text-decoration:none;" >그림</a><br><br>
+             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=human" class="sub_menu_text">::인물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=animal" class="sub_menu_text" >동물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=landscape" class="sub_menu_text" >풍경</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=text" class="sub_menu_text" >글자</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=food" class="sub_menu_text" >음식</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=art" class="sub_menu_text" >그림</a>
+           
+             
+            
+        
+        <br><br>
        </div>
 <!--
              <div class=menu_box>
@@ -76,9 +69,18 @@
           <div class=album_top>
                <a href="<?= SEARCH_PATH ?>/search_tag_form.php" style="color: #ffffff;
      text-decoration:none;" >태그 검색</a>
+         
           </div>
           
        </div>
+       
+       
+       
+       
+       <!---->
+       
+     
+       
 
 </div>
               

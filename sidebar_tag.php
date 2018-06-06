@@ -59,7 +59,7 @@ session_none();
                     <div class=menu_box style="background-color: rgba(0, 0, 0, 0.08);">
           <div class=album_top>
                <a href="<?= SEARCH_PATH ?>/search_tag_form.php" style="color: #ffffff;
-     text-decoration:none;" >태그검색</a>
+     text-decoration:none;" >태그 검색</a>
           </div>
           
        </div>

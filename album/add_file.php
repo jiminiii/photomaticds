@@ -22,7 +22,7 @@ if($_FILES["upload"]["error"][0] == UPLOAD_ERR_OK){
 
 
 
-for($i=0;$i<20;$i++){
+for($i=0;$i<8;$i++){
     if($_FILES['upload']['size'][$i]==0){
        header("Location: photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=$fname"."&cate=$group");
                 exit();
@@ -117,6 +117,7 @@ for($i=0;$i<20;$i++){
                     ///파파고로 번역//
                     
             
+
 
 
 //이부분은 보안상 숨김 실행시 값 입력 필요***********************************************************
