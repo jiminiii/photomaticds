@@ -44,13 +44,16 @@
 
 
                 </form>
+                <img src="/pm_site/img/blank.jpg" id="loading">
                 </div>
                 
                 
            
-                 <img src="/pm_site/img/blank.jpg" id="loading">
+                 
 
                 <table>
+                
+
                 <?php $count=1; ?>
                 <tr>
                     <?php foreach ($result as $row) : 

@@ -15,7 +15,6 @@
         <div id="m-container">        
             <?php require("sidebar.php");?>
             
-           
             <div id="m-content">
                 
                 <div class="head_box3">
@@ -112,7 +111,7 @@ background: -webkit-linear-gradient(top, hsla(232,95%,75%,1) 1%,hsla(215,100%,91
 background: linear-gradient(to bottom, hsla(232,95%,75%,1) 1%,hsla(215,100%,91%,1) 99%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8393fc', endColorstr='#d1e4ff',GradientType=0 );" onclick="location.href='<?= ALBUM_PATH ?>/folder_main.php?cate=food'">
                                   <br>
-                                   <img src="<?= IMG_PATH ?>/ic_profile_wh.png"
+                                   <img src="<?= IMG_PATH ?>/ic_food_wh.png"
                       class="ic_profile_wh">
                                 
                                 음식<br>
@@ -129,7 +128,7 @@ background: -webkit-linear-gradient(top, hsla(0,100%,80%,1) 0%,hsla(0,81%,94%,1)
 background: linear-gradient(to bottom, hsla(0,100%,80%,1) 0%,hsla(0,81%,94%,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9999', endColorstr='#fce3e3',GradientType=0 );" onclick="location.href='<?= ALBUM_PATH ?>/folder_main.php?cate=art'">
                                   <br>
-                                   <img src="<?= IMG_PATH ?>/ic_profile_wh.png"
+                                   <img src="<?= IMG_PATH ?>/ic_art_wh.png"
                       class="ic_profile_wh">
                                 
                                 그림<br>

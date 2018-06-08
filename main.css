@@ -103,6 +103,10 @@ position:relative;
     
 
 }
+.menu_box:hover{
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
 .album_top{
     font-family: NanumSquare;
     
@@ -119,6 +123,7 @@ position:relative;
 /*    position:relative;*/
      
 }
+
 .sub_menu{
       font-family: NanumSquare;
     
@@ -132,7 +137,31 @@ position:relative;
 .sub_menu_text{
     color: rgba(240,240,240,2);text-decoration:none;
     font-size:18px;
+    
 }
+
+.sub_menu_text:hover{
+    color: #ffffff;text-decoration:none;
+    font-size:18px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sub_menu:hover #sb_human_search{
+    visibility: visible;
+}
+.sub_menu_text:hover ~ #sb_human_search{
+    visibility:hidden;
+}
+#sb_human_search{
+    color: rgba(240,240,240,2);text-decoration:none;
+    font-size:15px;
+     visibility: hidden;
+}
+#sb_human{
+    color: rgba(240,240,240,2);text-decoration:none;
+    font-size:18px;
+}
+
 .head_box{
 /*     color: #ddaffe;*/
     width:1026px;

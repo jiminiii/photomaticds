@@ -42,8 +42,8 @@
        </div>
           <div class=sub_menu style="color: #ffffff; font-size:15px;">
           
-             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=human" class="sub_menu_text">::인물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=animal" class="sub_menu_text" >동물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=landscape" class="sub_menu_text" >풍경</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=text" class="sub_menu_text" >글자</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=food" class="sub_menu_text" >음식</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=art" class="sub_menu_text" >그림</a>
-           
+             <a href="<?=ALBUM_PATH?>/folder_main.php?cate=human" id="sb_human">::인물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=animal" class="sub_menu_text" >동물</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=landscape" class="sub_menu_text" >풍경</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=text" class="sub_menu_text" >글자</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=food" class="sub_menu_text" >음식</a> | <a href="<?=ALBUM_PATH?>/folder_main.php?cate=art" class="sub_menu_text" >그림</a>
+           <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?=ALBUM_PATH?>/search_face.php" id="sb_human_search" >└ 인물검색</a>
              
             
         
