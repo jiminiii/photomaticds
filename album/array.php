@@ -52,7 +52,7 @@
                     if($count==0){
                         errorBack("분류 기준에 맞는 사진이 존재하지 않습니다");
                     }
-                    header("Location: array_result.php?"."&cate=$cate"."&pname=$save_name"."&psize=$psize"."&count=$i");
+                    header("Location: array_result.php?"."&cate=$cate"."&count=$i");
                     exit();
                 }    
                 
@@ -133,7 +133,7 @@
                 errorBack("분류 기준에 맞는 사진이 존재하지 않습니다");
             }
             
-             header("Location: array_result.php?"."&cate=$cate"."&pname=$save_name"."&psize=$psize");
+             header("Location: array_result.php?"."&cate=$cate");
                     exit();
     }//error0
         

@@ -44,7 +44,7 @@
                 
 
                
-                      <div class="left">
+                      <div align="center">
                        <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br>
                        
                        <?php 

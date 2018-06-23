@@ -15,7 +15,7 @@
         <div id="m-container">        
             <?php require("sidebar.php");?>
             
-            <div id="m-content">
+            <div id="m-content" align="center">
                 
                 <div class="head_box3">
                     폴더 선택<br><br><br>
@@ -141,8 +141,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9999', end
                         
                     </div>
                    
-                 
-                
+               
             </div>
         </div>
     </body>

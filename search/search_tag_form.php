@@ -16,7 +16,7 @@
             <?php require("../sidebar_tag.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
             <div class="form"><br><br>
             태그로 이미지를 검색해보세요!
              

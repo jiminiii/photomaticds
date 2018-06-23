@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-
+<div align="center">
 <form action="./album/array.php" enctype="multipart/form-data" method="post" onsubmit="return loading(this);">
 분류할 사진들을 선택하세요.<br>
 <input type="file" id="file1" name="upload[]" multiple><br>
@@ -55,7 +55,7 @@
 <input type="submit" class="b_group" value="분류하기">
 </form>
 <br><img src="/pm_site/img/blank.jpg" id="loading">
-
+</div>
          <script type="text/javascript">
             function loading(f){
                 

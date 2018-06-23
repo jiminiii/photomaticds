@@ -13,6 +13,10 @@
     $cate=requestValue("cate");
 	$result = $dao->getFileList($sort,$dir,$email,$fname,$cate);
     
+//foreach($result as $p){
+//    foreach($p as $e){
+//        echo $e;}
+//echo "<br/>";}
 ?>
 
 
@@ -30,7 +34,8 @@
            
             <div id="m-content">
                 <div class="head_box">
-                   <?=$fname?> 
+                   <?=$fname?> <br>
+
                     
                      <hr width="100px" color=#ff3a5e><br>
                        <img src="<?= IMG_PATH?>/p_plus_bt.png" onclick="location.href='p_plus.php?fname=<?= $fname ?>&cate=<?=$cate?>'" style="width:60px;height:60px;">
@@ -39,7 +44,7 @@
                 <div id="p_upload_b" >
                  
                 </div>
-                
+                <div align="center">
 
                 <table>
                 <?php $count=1; ?>
@@ -54,6 +59,7 @@
                     <?php $count++; endforeach ?>
                     </tr>
                 </table> 
+                </div>
             </div>
         </div>
     </body>

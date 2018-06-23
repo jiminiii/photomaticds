@@ -28,7 +28,7 @@ $ver="two";
                                 ?>/f_art_1.png<?php
                             }
                           ?>" class="select_folder"><br>
-                        <form action ="add_folder.php?group=<?=$cate?>&pname=<?=$pname?>&psize=<?=$psize?>&ver=<?=$ver?>" method="post">
+                        <form action ="add_folder.php?group=<?=$cate?>&ver=<?=$ver?>" method="post">
                             <input type="text" name="fname" class="f_plus_t2" placeholder="폴더명" />
                            
                             <input type="submit" value="확인" class="f_plus_b">

@@ -25,7 +25,7 @@
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
                     인물 검색 결과
                     
@@ -34,7 +34,7 @@
                         찾으려고 했던 인물<br>
                <img src="<?= ALBUM_PATH ?>/temp_photo/<?= $photo ?>" class="photo_image"><br>
                 </div>
-                <br><br><br><br>
+                
                 <?php
                 
                 $resultface=$dao->getResultFileList($email);?>

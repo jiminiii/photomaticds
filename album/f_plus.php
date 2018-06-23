@@ -37,7 +37,7 @@
                      <hr width="100px" color=#ff3a5e>
                 </div>
                 
-                <div id="a_photo">
+                <div align="center">
 
                 <table>
                 <?php $count=2; ?>

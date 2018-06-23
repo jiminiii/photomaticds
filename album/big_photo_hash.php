@@ -2,8 +2,10 @@
 
     require_once("../tools.php");
 	require_once("uploadDao.php");
+require_once("../search/tagDao.php");
 	$dao=new uploadDao();
-	
+	$tdao=new tagDao();
+
 	$sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
 	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
 //	$path=isset($_REQUEST["path"] ? $_REQUEST["path"]:"name"]);
@@ -50,9 +52,29 @@
 
                
                       <div class="left">
-                       <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br><br>
+                       <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br>
                        
-                        
+                         
+                       <?php 
+                           
+                           $tagList=$tdao->getPhotoTagIdxList($num);
+                    if($tagList!=null){
+                         foreach($tagList as $t){
+                        $s=$tdao->getTagString("$t[hash_index]")
+                            ?>
+                            
+                           <a href="<?=SEARCH_PATH?>/search_t.php?tagString=<?=$s[0]?>" style="text-decoration:none;color:gray;"><?="#".$s[0]  ?></a>
+                           <img src="<?= IMG_PATH ?>/f_delete.png" style="width:10px; height:10px;" onclick="tagDelete('<?= $t["hash_index"]?>','<?=$num?>')">&nbsp; 
+                            
+                            <?php
+                    }
+                    }
+                   
+                    
+                           
+                           
+                           ?>
+                       <br><br>
                        추가 할 태그를 입력하세요
                        <form action="hash.php?pname=<?=$pname?>&fname=<?=$fname?>&cate=<?=$cate?>&num=<?=$num?>" method="post">
                            <input type="text" name="tagString" class="f_plus_t" style="width: 250px;font-size:20px;height:30px;color:gray;" placeholder="#태그#태그..." >
@@ -69,6 +91,27 @@
             </div>
         </div>
 
-
+ <script>
+            
+//            function tagDelete(hidx,pidx){
+//                var h_idx=hdix;
+//                var p_dix=pidx;
+//                var ret = confirm("선택한 태그를 지우시겠습니까?"+h_idx+","+p_idx);
+//                if(ret == true){
+//                   
+//                    location.href="hash_delete.php?hash_idx="+h_idx+"&photo_idx="+p_idx;
+//                }
+//                
+//            }
+            function tagDelete(hidx,pidx){
+                var ret = confirm("선택한 태그를 지우시겠습니까?");
+                if(ret == true){
+                   
+                    location.href="hash_delete.php?h="+hidx+"&p="+pidx;
+                }
+                
+            }
+     
+        </script>
     </body>
 </html>

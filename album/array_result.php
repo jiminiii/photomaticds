@@ -9,9 +9,9 @@
    
     $cate=requestValue("cate");
    
-    $pname=requestValue("pname");
-    $psize=requestValue("psize");
-    $save_name=$pname;//iconv("utf-8","cp949",$pname);
+//    $pname=requestValue("pname");
+//    $psize=requestValue("psize");
+//    $save_name=$pname;//iconv("utf-8","cp949",$pname);
     $ver=isset($_REQUEST["ver"]) ? $_REQUEST["ver"] : "one";
 	$result = $dao->getTempFileList($email,$cate);	
 	$f_list=$dao->getFolderList($email,$cate);	
@@ -37,7 +37,7 @@
             background-color:rgba(255,250,250,1);
     margin-left:70px;
     width:auto;
-    height:140px;
+    height:160px;
     border-top-style:dotted;
             border-bottom-color: #eedddd;
             border-top-color: #eedddd;
@@ -76,7 +76,7 @@
         <div id="m-container">        
           <?php require("../sidebar3.php");?>
 
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box2">
                    <?=$cate?> 분류 결과
                     

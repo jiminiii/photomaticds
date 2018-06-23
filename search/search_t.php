@@ -43,7 +43,7 @@
           <?php require("../sidebar_tag.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
             
             <div id="head" style="margin-bottom:100px;">
                <h3> #<?=$tag?> 검색결과</h3>

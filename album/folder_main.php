@@ -1,22 +1,23 @@
 <?php 
 
     require_once("../tools.php");
-	require_once("uploadDao.php");
-	$dao=new uploadDao();
-	
-	$sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
-	$dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
-//	$path=isset($_REQUEST["path"] ? $_REQUEST["path"]:"name"]);
-    session_start_if_none();
-	$email=sessionVar("uid");
-	$name=sessionVar("uname");
-    $cate=requestValue("cate");
-	//$result = $dao->getFileList($sort, $dir,$email,$fname);
-    $f_list=$dao->getFolderList($email,$cate);
+   require_once("uploadDao.php");
+   $dao=new uploadDao();
    
 
-?>
+   
+   $sort=isset($_REQUEST["sort"]) ? $_REQUEST["sort"] : "num";
+   $dir=isset($_REQUEST["dir"]) ? $_REQUEST["dir"] : "desc";
+//   $path=isset($_REQUEST["path"] ? $_REQUEST["path"]:"name"]);
+    session_start_if_none();
 
+  $email=sessionVar("uid");
+   $name=sessionVar("uname");
+    $cate=requestValue("cate");
+    $f_list=$dao->getFolderList($email,$cate);  //2차원 배열로 넘긴다. 
+
+
+?>
 
 <!doctype html>
 <html>
@@ -44,7 +45,7 @@
                      <hr width="100px" color=#ff3a5e>
                 </div>
                 
-                <div id="a_photo">
+                <div align="center">
 
                 <table>
                 <?php $count=1; ?>
@@ -82,7 +83,7 @@
                 
             </div>
 
-            
+                              
                 
             </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
     require_once("../tools.php");
 require(API_AWS_SDK);
-	$errMsg="업로드 실패!";
+	$errMsg="인물을 찾을 수 없습니다!";
     session_start_if_none();
 	$email=sessionVar("uid");
 	$name=sessionVar("uname");
@@ -34,7 +34,7 @@ if($_FILES["upload"]["error"] == UPLOAD_ERR_OK){
 //컬렉션에서 방금 업로드한 얼굴과 같은 얼굴찾기
             $cn = explode("@",$email); 
             $collectionid=$cn[0].$cn[1];
-            
+            try{
                  $result = $rekognition->searchFacesByImage([
     'CollectionId' => $collectionid,
     'FaceMatchThreshold' => 85,
@@ -51,56 +51,41 @@ if($_FILES["upload"]["error"] == UPLOAD_ERR_OK){
         unlink($directory.$file);
     }
     closedir($handle);
+    $dao->deleteResultFace();
+    
+    
+    
     
     //업로드한 파일 임시 폴더로 옮기기
      if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$temp_name")){
      }
     
-$dao->deleteResultFace();
+
      print '이것은 searchFaceByImage테스트' . PHP_EOL;
      for ($n=0;$n<sizeof($result['FaceMatches']); $n++){
-//       print 'Height: '.$result['FaceMatches'][$n]['Face']['BoundingBox']['Height']
-//       .  PHP_EOL
-//       .'Left: '.$result['FaceMatches'][$n]['Face']['BoundingBox']['Left']
-//       .  PHP_EOL
-//       .'Top: '.$result['FaceMatches'][$n]['Face']['BoundingBox']['Top']
-//       .  PHP_EOL
-//       .'Width: '.$result['FaceMatches'][$n]['Face']['BoundingBox']['Width']
-//       .  PHP_EOL
-//       .'Confidence: '.$result['FaceMatches'][$n]['Face']['Confidence']
-//       .  PHP_EOL
-//       .'FaceId: '.$result['FaceMatches'][$n]['Face']['FaceId']
-//       .  PHP_EOL
-//       .'ImageId: '.$result['FaceMatches'][$n]['Face']['ImageId']
-//       .  PHP_EOL
-//       .'Similarity: '.$result['FaceMatches'][$n]['Similarity']
-//       .  PHP_EOL
-//       .'SearchedFaceConfidence: '.$result[$n]['SearchedFaceConfidence']
-//
-//       .  PHP_EOL.  PHP_EOL;
+
        $search=$dao->getFaceFileInfo($email,$result['FaceMatches'][$n]['Face']['FaceId']);
        $save_name=$search['pname'];
        $psize=$search['psize'];
        $fname=$search['fname'];
        $dao->addResultFaceInfo($result['FaceMatches'][$n]['Face']['FaceId'],$fname,$email,$save_name,$psize,date("Y-m-d H:i:s"));
      }
-     
+                
+                     
 header("Location: search_result.php?photo=$temp_name");
                 exit();
-}
-?>
-
-<!doctype html>
-<html>
-<head>
-	<meta charset="utf-8">
-</head>
-<body>
-
-<script>
+                
+                }catch(Exception $e){
+                
+                
+                ?>
+                <script>
 	alert('<?=$errMsg ?>');
 	history.back();
 </script>
+                <?php
+                
+            }
 
-</body>
-</html>
+}
+?>

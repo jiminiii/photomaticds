@@ -140,7 +140,22 @@ class tagDao{
 		}
 	}
     
- 
+ 	public function deletePhotoTagInfo($h_idx,$p_idx){
+		
+		try{
+
+			$query = $this->db->prepare("delete from photo_hash where hash_index='$h_idx' and photo_index='$p_idx'");
+
+			$query->execute();
+		}catch(PDOException $e){
+			exit($e->getMessage());
+			
+		}
+		
+	//	return $result;
+		
+		
+	}
 
 	
 }

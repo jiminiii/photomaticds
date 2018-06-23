@@ -12,7 +12,7 @@ $ver="two";
    
    <table class="foldertable">
        <tr>
-          <td class="left_folder"><img src="<?= IMG_PATH ?>/f-plus.png" class="select_folder" onclick= "location.href='array_result.php?cate=<?=$cate?>&pname=<?=$pname?>&psize=<?=$psize?>&ver=<?=$ver?>'"><br><div class="textalign" >폴더추가하기</div></td>
+          <td class="left_folder"><img src="<?= IMG_PATH ?>/f-plus.png" class="select_folder" onclick= "location.href='array_result.php?cate=<?=$cate?>&ver=<?=$ver?>'"><br><div class="textalign" >폴더추가하기</div></td>
            <?php foreach ($f_list as $row) :
                     ?>
                      

@@ -26,7 +26,7 @@
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
                     인물 검색
                     
