@@ -33,7 +33,7 @@
         $dao->deleteTempFileInfo($email);
             
             
-            for($i=0;$i<20;$i++){
+            for($i=0;$i<15;$i++){
                 $findLabel=false;
                 
                     $tname=$_FILES["upload"]["tmp_name"][$i];
