@@ -1,5 +1,4 @@
 <?php
-
 	
 class uploadDao{
 	private $db;
@@ -61,7 +60,6 @@ class uploadDao{
 		
 		return $result;
 	}
-
    
         public function getTempFileList($email,$cate){
 		
@@ -92,11 +90,7 @@ class uploadDao{
             $query->bindValue(":pname",$pname,PDO::PARAM_STR);
             $query->bindValue(":psize",$psize,PDO::PARAM_INT);
             $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
-            
-//			
-//			$query->bindValue(":fname",$fname,PDO::PARAM_STR);
-//			$query->bindValue(":ftime",$ftime,PDO::PARAM_STR);
-//			$query->bindValue(":fsize",$fsize,PDO::PARAM_INT);
+
 			
 			$query->execute();
 			
@@ -128,7 +122,6 @@ class uploadDao{
 			exit($e->getMessage());
 		}
 	}
-
         	
 	public function  addTempFileInfo($cate,$email,$pname,$psize,$ptime){
 		
@@ -142,7 +135,6 @@ class uploadDao{
             $query->bindValue(":pname",$pname,PDO::PARAM_STR);
             $query->bindValue(":psize",$psize,PDO::PARAM_INT);
             $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
-
 			
 			$query->execute();
 			
@@ -156,17 +148,7 @@ class uploadDao{
 	public function deleteFileInfo($num){
 		
 		try{
-			
-			
-			//삭제할 파일명을 $result에 담아 둠
-			
-//			$query = $this->db->prepare("select fname from photo where num=:num");
-//			$query->bindValue(":num",$num,PDO::PARAM_INT);
-//			$query->execute();
-//			
-//			$result=$query->fetchColumn();
-			
-			//지정된 레코드 삭제
+
 			
 			$query = $this->db->prepare("delete from photo where num='$num'");
 			
@@ -176,28 +158,33 @@ class uploadDao{
 			exit($e->getMessage());
 			
 		}
-		
-	//	return $result;
-		
+
 		
 	}
     
-    	public function deleteTempFileInfo($email){
+    	public function deleteTempFileInfo($email){//주기적으로 지우는것.사용자가 분류만하고 저장안한경우
+		
+		try{
+
+			
+			$query = $this->db->prepare("delete from extraphoto where email='$email'");
+			
+			//$query->bindValue("':num'",$num,PDO::PARAM_INT);
+			$query->execute();
+		}catch(PDOException $e){
+			exit($e->getMessage());
+			
+		}
+
+	}
+    
+    
+        	public function deleteTempPhotoInfo($pname,$email){//분류하고나서 기준에안맞은 사진들 사용자가지우고싶을때
 		
 		try{
 			
 			
-			//삭제할 파일명을 $result에 담아 둠
-			
-//			$query = $this->db->prepare("select fname from photo where num=:num");
-//			$query->bindValue(":num",$num,PDO::PARAM_INT);
-//			$query->execute();
-//			
-//			$result=$query->fetchColumn();
-			
-			//지정된 레코드 삭제
-			
-			$query = $this->db->prepare("delete from extraphoto where email='$email'");
+			$query = $this->db->prepare("delete from extraphoto where pname='$pname' and email='$email'");
 			
 			//$query->bindValue("':num'",$num,PDO::PARAM_INT);
 			$query->execute();
@@ -264,11 +251,9 @@ class uploadDao{
     
     //컬렉션부분 추가함수들
        public function addFaceInfo($faceID,$fname,$email,$pname,$psize,$ptime){
-
      try{
        $sql="insert into facelist(faceID,fname,email,pname,psize,ptime)values  (:faceID,:fname,:email,:pname,:psize,:ptime)";
        $query=$this->db->prepare($sql);
-
               $query->bindValue(":faceID",$faceID,PDO::PARAM_STR);
             $query->bindValue(":fname",$fname,PDO::PARAM_STR);
             $query->bindValue(":email",$email,PDO::PARAM_STR);
@@ -279,9 +264,7 @@ class uploadDao{
   //			$query->bindValue(":fname",$fname,PDO::PARAM_STR);
   //			$query->bindValue(":ftime",$ftime,PDO::PARAM_STR);
   //			$query->bindValue(":fsize",$fsize,PDO::PARAM_INT);
-
        $query->execute();
-
      }catch(PDOException $e){
        exit($e->getMessage());
      }
@@ -319,34 +302,26 @@ class uploadDao{
     }
     
     public function getFaceFileInfo($email,$faceID){
-
-
         try{
         $query= $this->db->prepare("select * from facelist where email='$email' and faceID=
         '$faceID'");
         $query->execute();
-
         // $result=$query->fetchAll(PDO::FETCH_ASSOC);
         $result=$query->fetch();
         }catch(PDOException $e){
         exit($e->getMessage());
         }
-
         return $result;
     }
         public function getFacelist($email,$fname){
-
-
         try{
         $query= $this->db->prepare("select * from facelist where email='$email' and fname='$fname'");
         $query->execute();
-
         // $result=$query->fetchAll(PDO::FETCH_ASSOC);
         $result=$query->fetchAll(PDO::FETCH_ASSOC);
         }catch(PDOException $e){
         exit($e->getMessage());
         }
-
         return $result;
     }
     
@@ -365,59 +340,40 @@ class uploadDao{
 	}
     
     	 public function addResultFaceInfo($faceID,$fname,$email,$pname,$psize,$ptime){
-
      try{
        $sql="insert into resultface(faceID,fname,email,pname,psize,ptime)values  (:faceID,:fname,:email,:pname,:psize,:ptime)";
        $query=$this->db->prepare($sql);
-
               $query->bindValue(":faceID",$faceID,PDO::PARAM_STR);
                 $query->bindValue(":fname",$fname,PDO::PARAM_STR);
                 $query->bindValue(":email",$email,PDO::PARAM_STR);
               $query->bindValue(":pname",$pname,PDO::PARAM_STR);
               $query->bindValue(":psize",$psize,PDO::PARAM_INT);
               $query->bindValue(":ptime",$ptime,PDO::PARAM_STR);
-
        $query->execute();
-
      }catch(PDOException $e){
        exit($e->getMessage());
      }
    }
     
     		public function deleteResultFace(){
-
 			try{
-
 				$query = $this->db->prepare("delete from resultface where num>=0");
-
 				$query->execute();
 			}catch(PDOException $e){
 				exit($e->getMessage());
-
 			}
-
 		//	return $result;
-
-
 		}
     public function getResultFileList($email){
-
-
         try{
         $query= $this->db->prepare("select * from resultface where email='$email'");
         $query->execute();
-
         $result=$query->fetchAll(PDO::FETCH_ASSOC);
         }catch(PDOException $e){
         exit($e->getMessage());
         }
-
         return $result;
     }
-
 	
 }
-
-
-
 ?>

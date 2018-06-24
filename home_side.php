@@ -34,7 +34,7 @@
                   <div class="Rectangle-2">
                    <img src="img/drawable/ic_pass_gray.svg"
                    class="ic_pass_wh">
-                      <input type="password" name="pw" class="t_emailpw" placeholder="비밀번호를 입력해주세요." />
+                      <input type="password" name="pw" class="t_pw" placeholder="비밀번호를 입력해주세요." />
                 </div>
                 <div class="Rectangle"></div>
        

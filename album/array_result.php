@@ -104,7 +104,7 @@
                     }
                     ?>
                        <td class="left"><img src="<?= ALBUM_PATH ?>/temp_photo/<?=$row["pname"]?>"
-                          class="photo_image"></td>
+                          class="photo_image"><br> <img src="<?= IMG_PATH ?>/f_delete.png" style="width:15px; height:15px;" onclick="PhotoDelete('<?= $row["pname"]?>','<?=$email?>')"></td>
                     <?php $count++; endforeach ?>
                     </tr>
                 </table>
@@ -115,5 +115,19 @@
             </div>
             
         </div>
+        
+         <script>
+            
+
+            function PhotoDelete(pname,email){
+                var ret = confirm("선택한 사진을 지우시겠습니까?");
+                if(ret == true){
+                   
+                    location.href="temp_delete.php?p="+pname+"&e="+email;
+                }
+                
+            }
+     
+        </script>
     </body>
 </html>

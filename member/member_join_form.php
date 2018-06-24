@@ -54,14 +54,14 @@
                        <div class="Rectangle">
                           <img src="<?= IMG_PATH ?>/ic_pass_gray.png"
                           class="ic_gray">&nbsp;&nbsp;&nbsp;
-                          <input type="password" name="pw" class="name" placeholder="비밀번호를 입력해주세요."  />
+                          <input type="password" name="pw" class="pw"  placeholder="비밀번호를 입력해주세요."  />
 
                        </div>
                         <div class="line"></div>
                        <div class="Rectangle">
                         <img src="<?= IMG_PATH ?>/ic_pass_gray.png"
                           class="ic_gray">&nbsp;&nbsp;&nbsp;
-                           <input type="password" name="pw2" class="name" placeholder="비밀번호를 한 번 더 입력해주세요."  />
+                           <input type="password" name="pw2" class="pw" placeholder="비밀번호를 한 번 더 입력해주세요."  />
 
                       </div>
                       <div class="line"></div>

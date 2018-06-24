@@ -28,7 +28,7 @@
  
        <div id="m-container">
            <?php require("home_side.php");?>
-           <div id="m-content">
+           <div id="m-content" align="center">
                
            
 <!--        <div class="gradient">-->

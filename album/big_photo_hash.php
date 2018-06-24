@@ -93,16 +93,7 @@ require_once("../search/tagDao.php");
 
  <script>
             
-//            function tagDelete(hidx,pidx){
-//                var h_idx=hdix;
-//                var p_dix=pidx;
-//                var ret = confirm("선택한 태그를 지우시겠습니까?"+h_idx+","+p_idx);
-//                if(ret == true){
-//                   
-//                    location.href="hash_delete.php?hash_idx="+h_idx+"&photo_idx="+p_idx;
-//                }
-//                
-//            }
+
             function tagDelete(hidx,pidx){
                 var ret = confirm("선택한 태그를 지우시겠습니까?");
                 if(ret == true){
