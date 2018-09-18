@@ -1,10 +1,10 @@
 <?php
     require_once("../tools.php");
 require(API_AWS_SDK);
-	$errMsg="업로드 실패!";
+   $errMsg="업로드 실패!";
     session_start_if_none();
-	$email=sessionVar("uid");
-	$name=sessionVar("uname");
+   $email=sessionVar("uid");
+   $name=sessionVar("uname");
     $fname=requestValue("fname");
     $group=requestValue("cate");
 if($_FILES["upload"]["error"][0] == UPLOAD_ERR_OK){
@@ -24,14 +24,15 @@ if($_FILES["upload"]["error"][0] == UPLOAD_ERR_OK){
 
 for($i=0;$i<8;$i++){
     if($_FILES['upload']['size'][$i]==0){
-       header("Location: photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=$fname"."&cate=$group");
+       header("Location:photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=$fname"."&cate=$group");
                 exit();
+       
     }
-	if ($_FILES["upload"]["error"][$i]==UPLOAD_ERR_OK){
+   if ($_FILES["upload"]["error"][$i]==UPLOAD_ERR_OK){
 
-		$tname=$_FILES["upload"]["tmp_name"][$i];
-		$pname=$_FILES["upload"]["name"][$i];
-		$psize=$_FILES["upload"]["size"][$i];
+      $tname=$_FILES["upload"]["tmp_name"][$i];
+      $pname=$_FILES["upload"]["name"][$i];
+      $psize=$_FILES["upload"]["size"][$i];
         ///
 
 
@@ -39,12 +40,12 @@ for($i=0;$i<8;$i++){
         $image = fread($fp_image, filesize($_FILES['upload']['tmp_name'][$i]));
         fclose($fp_image);
 
-		$save_name=$pname;//iconv("utf-8","cp949",$pname);
+      $save_name=$pname;//iconv("utf-8","cp949",$pname);
         $fn = explode(".",$save_name);
         $save_name_ext = array_pop($fn);
         $randomNum=mt_rand(0,1000);
-		$save_name=date("YmdHis").$randomNum.".".$save_name_ext;
-		if(file_exists(UPLOAD_PATH.ALBUM_PATH."/user-album/$email/$group/$fname/$save_name")){
+      $save_name=date("YmdHis").$randomNum.".".$save_name_ext;
+      if(file_exists(UPLOAD_PATH.ALBUM_PATH."/user-album/$email/$group/$fname/$save_name")){
 //            $errMsg="이미 업로드한 파일입니다.";
              $original=$save_name;
             $save_name=date("YmdHis").$original;
@@ -67,7 +68,7 @@ for($i=0;$i<8;$i++){
                 $dao->addFileInfo($group,$fname,$email,$save_name,$psize,date("Y-m-d H:i:s"));
                 $dao->updateFolderSize($group,$fname,$email,1);
 
-		  }
+        }
 
 
         //사진속 얼굴들 컬렉션에 집어넣기
@@ -116,18 +117,21 @@ for($i=0;$i<8;$i++){
                     //태그 자동생성 최대 6개로 제한
                     ///파파고로 번역//
                     
-            
+
 
 
 
 //이부분은 보안상 숨김 실행시 값 입력 필요***********************************************************
-//$client_id = "";
-//$client_secret = "";
+
+$client_id = "";
+$client_secret = "";
    //**************************************************************************************         
 $encText = urlencode($resultLabel['Labels'][$n]['Name']);
  $postvars = "source=en&target=ko&text=".$encText;
-$url = "https://openapi.naver.com/v1/papago/n2mt";
-    //$url = "https://openapi.naver.com/v1/language/translate";s버전일때
+//$url = "https://openapi.naver.com/v1/papago/n2mt";
+                    //n버전
+    $url = "https://openapi.naver.com/v1/language/translate";
+                    //s버전일때
 $is_post = true;
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -135,8 +139,8 @@ curl_setopt($ch, CURLOPT_POST, $is_post);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch,CURLOPT_POSTFIELDS, $postvars);
 $headers = array();
-$headers[] = "X-Naver-Client-Id: ".$client_id;
-$headers[] = "X-Naver-Client-Secret: ".$client_secret;
+$headers[] = "X-Naver-Client-Id:".$client_id;
+$headers[] = "X-Naver-Client-Secret:".$client_secret;
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $response = curl_exec ($ch);
 $json_string=$response;
@@ -145,15 +149,17 @@ $rr=$data_array['message']['result']['translatedText'];
 $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 echo "status_code:".$status_code."<br>";
 curl_close ($ch);
-//if($status_code == 200) {
-//  echo $rr;
-//  // echo $response;
-//} else {
-//  echo "Error 내용:".$response;
-//}
-//                    
-                    ////번역완료///
+if($status_code == 200) {
+  echo $rr;
+  
+} else {
+  echo "Error 내용:".$response;
+}
+                    
+                    ////번역완료///  
+                    
 
+         // $rr=$resultLabel['Labels'][$n]['Name'];        
                     
 $exist =$tdao->getTag($rr);
     if($exist[0]==null){
@@ -172,10 +178,10 @@ $fileNum=$dao->getFileNum($save_name);
 
 
         //////
-	}
+   }
 
 }
-header("Location: photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=$fname"."&cate=$group");
+header("Location:photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=$fname"."&cate=$group");
                 exit();
 }
 ?>
@@ -183,13 +189,17 @@ header("Location: photo.php?sort=$_REQUEST[sort]"."&dir=$_REQUEST[dir]"."&fname=
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
+   <meta charset="utf-8">
+
+   
 </head>
 <body>
 
 <script>
-	alert('<?=$errMsg ?>');
-	history.back();
+        
+    
+   alert('<?=$errMsg ?>');
+   history.back();
 </script>
 
 </body>

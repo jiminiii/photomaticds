@@ -31,13 +31,13 @@
     <link rel="stylesheet" type="text/css" href="../main.css">
     </head>
     <body>
-        <div id="m-container">        
+        <div id="m-container" >        
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
-                   <?=requestValue("fname")?>
+                  <a href="<?= ALBUM_PATH ?>/photo.php?fname=<?=$fname?>&cate=<?=$cate?>" style="text-decoration:none; color:#000000;"><?=requestValue("fname")?></a> 
                      <hr width="100px" color=#ff3a5e>
                 </div>
                 

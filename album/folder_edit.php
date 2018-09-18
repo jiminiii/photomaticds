@@ -30,7 +30,7 @@
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
                     <?=$cate?>
                     <img src="<?= IMG_PATH ?>/set2.png" style="width:25px; height:25px;" onclick= "location.href='folder_main.php?cate=<?=$cate?>'">

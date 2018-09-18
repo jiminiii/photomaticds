@@ -42,16 +42,16 @@ require_once("../search/tagDao.php");
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
-                   <?=requestValue("fname")?>
+                  <a href="<?= ALBUM_PATH ?>/photo.php?fname=<?=$fname?>&cate=<?=$cate?>" style="text-decoration:none; color:#000000;"><?=requestValue("fname")?></a> 
                      <hr width="100px" color=#ff3a5e>
                 </div>
                 
                 
 
                
-                      <div class="left">
+                      <div class="center">
                        <div class="b_photo"><img src="<?= ALBUM_PATH ?>/user-album/<?= $email?>/<?=$cate?>/<?=$fname?>/<?=$pname?>" class="b_photo_in" > <br>
                        
                          

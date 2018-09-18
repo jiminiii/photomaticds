@@ -33,7 +33,7 @@
           <?php require("../sidebar.php");?>
             
            
-            <div id="m-content">
+            <div id="m-content" align="center">
                 <div class="head_box">
                    <?=$fname?>
                      <hr width="100px" color=#ff3a5e><br>

@@ -17,10 +17,9 @@
          if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           errorBack("유효하지 않은 이메일주소입니다."); 
         }    
-		if($mdao->getMember($email))
+		if($mdao->getMember($email)){
 			errorBack("이미 사용 중인 이메일 입니다.");
-        
-        else if($pw!=$pw2){
+        }else if($pw!=$pw2){
             errorBack("비밀번호가 일치하지 않습니다.");
         }
 		else {

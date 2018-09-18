@@ -11,20 +11,19 @@
 	$member=$mdao->getMember($email);
 	
 	//그런 아이디를 가진 레코드가 있고, 비밀번호가 맞으면 로그인
-	
-	if($member && $member["pw"]==$pw){
-		
-		session_start_if_none();
+	if(!$member){
+        errorBack("해당 아이디가 존재하지 않습니다.");
+    }else if($member["pw"]==$pw){
+        	session_start_if_none();
 		
 		$_SESSION["uid"]=$email;
 		$_SESSION["uname"]=$member["name"];
 		
 		//메인페이지로 돌아감
 		goNow(MAIN_PAGE);
-		
-	} else
+    }else{
 		errorBack("아이디 또는 비밀번호가 잘못 입력되었습니다. ");
-
+    }
 
 
 ?>

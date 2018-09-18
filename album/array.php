@@ -4,8 +4,8 @@
     session_start_if_none();
 	$email=sessionVar("uid");
     $count=0;
- 
-    $myLabel=isset($_REQUEST['categroup']) ? $_REQUEST['categroup'] : "null";
+//    $myLabel=requestValue("categroup");
+    $myLabel=isset($_REQUEST["categroup"]) ? $_REQUEST["categroup"] : "null";
     if($myLabel=="null"){
          errorBack("분류 기준을 선택해주세요");
     }else{
@@ -48,11 +48,12 @@
                     $randomNum=mt_rand(0,1000);
                     $save_name=date("YmdHis").$randomNum.".".$save_name_ext;//.$original;
                 
-                if($_FILES['upload']['size'][$i]==0){
+                if($_FILES["upload"]["size"][$i]==0){
                     if($count==0){
-                        errorBack("분류 기준에 맞는 사진이 존재하지 않습니다");
+                        errorBack("분류 기준에 맞는 사진이 존재하지 않습니다".$i);
+                    
                     }
-                    header("Location: array_result.php?"."&cate=$cate"."&count=$i");
+                    header("Location: array_result.php?"."cate=$cate"."&count=$i");
                     exit();
                 }    
                 
@@ -133,7 +134,7 @@
                 errorBack("분류 기준에 맞는 사진이 존재하지 않습니다");
             }
             
-             header("Location: array_result.php?"."&cate=$cate");
+             header("Location: array_result.php?"."cate=$cate");
                     exit();
     }//error0
         
