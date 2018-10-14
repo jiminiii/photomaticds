@@ -36,7 +36,7 @@ require_once("../search/tagDao.php");
 //                            
 //                }
 
-                $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/";
+                $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/";
                 $handle=opendir($directory); 
                 while($file=readdir($handle)){
                  //   unlink($directory.$file);
@@ -44,7 +44,7 @@ require_once("../search/tagDao.php");
                 }
                 closedir($handle);
 //템프폴더에 있는 사진들 삭제
-                $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/";
+                $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/";
                 $handle=opendir($directory); 
                 while($file=readdir($handle)){
                     unlink($directory.$file);

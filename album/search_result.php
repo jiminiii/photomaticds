@@ -32,13 +32,18 @@
                      <hr width="100px" color=#ff3a5e>
                      <br>
                         찾으려고 했던 인물<br>
-               <img src="<?= ALBUM_PATH ?>/temp_photo/<?= $photo ?>" class="photo_image"><br>
+               <img src="<?= ALBUM_PATH ?>/temp_photo/<?=$email?>/<?= $photo ?>" class="photo_image"><br>
                 </div>
                 
+                
+                
                 <?php
-                
-                $resultface=$dao->getResultFileList($email);?>
-                
+              
+                $resultface=$dao->getResultFileList($email);
+          
+      
+                ?>
+
    
             
         
@@ -64,3 +69,4 @@
 
     </body>
 </html>
+

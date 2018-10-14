@@ -9,6 +9,9 @@ require_once("../tools.php");
 
         $dao->deleteTempPhotoInfo($pname,$email);
         
+  
+
+unlink(UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/$pname");
 ?>
 
         <script>history.go(-1);</script>

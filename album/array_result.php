@@ -103,7 +103,7 @@
                         ?></tr><tr><?php
                     }
                     ?>
-                       <td class="left"><img src="<?= ALBUM_PATH ?>/temp_photo/<?=$row["pname"]?>"
+                       <td class="left"><img src="<?= ALBUM_PATH ?>/temp_photo/<?=$email?>/<?=$row["pname"]?>"
                           class="photo_image"><br> <img src="<?= IMG_PATH ?>/f_delete.png" style="width:15px; height:15px;" onclick="PhotoDelete('<?= $row["pname"]?>','<?=$email?>')"></td>
                     <?php $count++; endforeach ?>
                     </tr>

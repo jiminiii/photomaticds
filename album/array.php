@@ -24,7 +24,18 @@
             $rekognition = new Aws\Rekognition\RekognitionClient($options);
             require("uploadDao.php");
             $dao=new uploadDao();
-                     $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/";
+            
+              //템프포토 내에 계정폴더 생성하는부분
+              if(!is_dir(UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email")){
+                umask(0);
+                if(!mkdir(UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email",0777,true)){
+                    print_r(error_get_last());
+                    return;
+                }
+            }
+            
+            
+                     $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/";
                 $handle=opendir($directory); 
                 while($file=readdir($handle)){
                     unlink($directory.$file);
@@ -120,7 +131,7 @@
                         break;
                             
                 }
-                    if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$save_name")){
+                    if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/$save_name")){
                         $dao->addTempFileInfo($cate,$email,$save_name,$psize,date("Y-m-d H:i:s"));
                     }
                 }

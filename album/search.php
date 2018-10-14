@@ -44,8 +44,18 @@ if($_FILES["upload"]["error"] == UPLOAD_ERR_OK){
     'MaxFaces' => 5,
 ]);
             
+                    //템프포토 내에 계정폴더 생성하는부분
+              if(!is_dir(UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email")){
+                umask(0);
+                if(!mkdir(UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email",0777,true)){
+                    print_r(error_get_last());
+                    return;
+                }
+            }
+                
+                
     //임시폴더에 있는것들모두지우고
-    $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/";
+    $directory=UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/";
     $handle=opendir($directory); 
     while($file=readdir($handle)){
         unlink($directory.$file);
@@ -57,7 +67,7 @@ if($_FILES["upload"]["error"] == UPLOAD_ERR_OK){
     
     
     //업로드한 파일 임시 폴더로 옮기기
-     if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$temp_name")){
+     if(move_uploaded_file($tname, UPLOAD_PATH.ALBUM_PATH."/temp_photo/$email/$temp_name")){
      }
     
 
